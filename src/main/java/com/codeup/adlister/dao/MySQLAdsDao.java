@@ -37,8 +37,8 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
-        try {
-            String sql = "INSERT INTO ads(title, description, user_id) VALUES (?, ?, ?)";
+        try {                                        // added the date created when inserting a new ad into the data base
+            String sql = "INSERT INTO ads(title, description, user_id, date_created) VALUES (?, ?, ?, curdate())";
             PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
