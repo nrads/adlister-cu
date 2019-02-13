@@ -2,6 +2,8 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
             User user = new User();
             user.setUsername(username);
             user.setEmail(email);
-            user.setPassword(password);
+            user.setPassword(Password.hash(password));
             if (DaoFactory.getUsersDao().insert(user) == -12L){
                 request.setAttribute("username", username);
                 request.setAttribute("email",email);

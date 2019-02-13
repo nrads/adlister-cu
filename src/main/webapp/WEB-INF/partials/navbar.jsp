@@ -6,9 +6,10 @@
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-
             <c:choose>
                 <c:when test="${sessionScope.user != null}">
+                    <li><a href="/ads/create">Create an ad</a></li>
+                    <li><a href="/profile">Profile</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </c:when>
                 <c:otherwise>
