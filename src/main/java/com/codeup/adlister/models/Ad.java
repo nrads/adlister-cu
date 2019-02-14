@@ -5,12 +5,20 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
+    private String dateCreated;
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
+    }
+    public Ad(long id, long userId, String title, String description, String dateCreated) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.dateCreated = dateCreated;
     }
 
     public Ad(long userId, String title, String description) {
@@ -49,5 +57,13 @@ public class Ad {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }

@@ -25,11 +25,10 @@ public class MySQLUsersDao implements Users {
 
         User user = new User();
         try {
-            String sql = "SELECT * FROM user where username like ?";
-            String searchTermWithWildcards = "%" + username + "%";
+            String sql = "SELECT * FROM user where username = ?";
 
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, searchTermWithWildcards);
+            stmt.setString(1, username);
 
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
