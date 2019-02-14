@@ -63,7 +63,8 @@ public class MySQLAdsDao implements Ads {
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
-            rs.getString("description")
+            rs.getString("description"),
+            rs.getString("date_created")
         );
     }
 
@@ -73,5 +74,28 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    @Override
+    public List<Ad> searchAds(String searchQuery) {
+        String sql = "Select * from ads where title like ? or description like ?";
+        searchQuery = "%" + searchQuery +"%";
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, searchQuery);
+            stmt.setString(2, searchQuery);
+
+            ResultSet generatedIdResultSet =  stmt.executeQuery();
+
+            return createAdsFromResults(generatedIdResultSet);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching all ads.", e);
+        }
+
+    }
+    @Override
+    public List<Ad> categoryFilter(String searchQuery) {
+        return null;
     }
 }
