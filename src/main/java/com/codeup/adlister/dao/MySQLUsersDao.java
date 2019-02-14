@@ -59,6 +59,15 @@ public class MySQLUsersDao implements Users {
 //                throw new RuntimeException("Error creating a new user.", e);
                 return -12L;
             }
+    }
 
+    public void updateUsername(String newUsername) {
+        try{
+            String sql = "UPDATE user SET username = ? WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+
+        } catch (SQLException e){
+            throw new RuntimeException("Error updating username.", e);
+        }
     }
 }
