@@ -18,6 +18,7 @@ public class AdsIndexServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.removeAttribute("failed");
         if(request.getParameter("searchAds").trim().isEmpty()) {
             try {
 
@@ -26,9 +27,9 @@ public class AdsIndexServlet extends HttpServlet {
             } catch (ServletException e) {
                 e.printStackTrace();
             }
+        } else {
+            request.setAttribute("ads", DaoFactory.getAdsDao().searchAds(request.getParameter("searchAds")));
+            request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
         }
-        request.setAttribute("ads", DaoFactory.getAdsDao().searchAds(request.getParameter("searchAds")));
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
-
     }
 }
