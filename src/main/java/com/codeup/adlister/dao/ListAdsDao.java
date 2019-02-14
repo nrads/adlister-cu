@@ -65,4 +65,7 @@ public class ListAdsDao implements Ads {
     public List<Ad> categoryFilter(String searchQuery) {
         return null;
     }
+
+    @Override
+    public List<Ad> ownerAds(Long user_id) { return null; }
 }
