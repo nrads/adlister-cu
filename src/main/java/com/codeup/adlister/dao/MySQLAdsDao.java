@@ -45,7 +45,9 @@ public class MySQLAdsDao implements Ads {
             stmt.setLong(3, ad.getUserId());
             stmt.executeUpdate();
             ResultSet generatedIdResultSet = stmt.getGeneratedKeys();
+
             generatedIdResultSet.next();
+
             return generatedIdResultSet.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
@@ -95,6 +97,25 @@ public class MySQLAdsDao implements Ads {
         }
 
     }
+    @Override
+    public void setAdCategory(Long adId, String[] array){
+
+        try {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != null ){
+                    String sql = "INSERT INTO ad_categories(ad_id, categories_id) VALUES (?, ?)";
+                    PreparedStatement stmt = connection.prepareStatement(sql);
+                    stmt.setLong(1, adId);
+                    stmt.setLong(2, i+1);
+                    stmt.executeUpdate();
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error setting categories to ad: "+ adId, e);
+        }
+    }
+
     @Override
     public List<Ad> categoryFilter(String searchQuery) {
         return null;

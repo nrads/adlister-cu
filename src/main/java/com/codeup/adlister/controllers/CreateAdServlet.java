@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.Array;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -31,12 +32,32 @@ public class CreateAdServlet extends HttpServlet {
                 e.printStackTrace();
             }
         } else {
+
             Ad ad = new Ad( // replace the hardcoded user id with the current logged in user's id
                     ((User) request.getSession().getAttribute("user")).getId(),
                     request.getParameter("title"),
                     request.getParameter("description")
             );
-            DaoFactory.getAdsDao().insert(ad);
+          
+            String[] array = {
+                    request.getParameter("Art"),
+                    request.getParameter("Cars"),
+                    request.getParameter("Computers"),
+                    request.getParameter("Electronics"),
+                    request.getParameter("Furniture"),
+                    request.getParameter("IT Services"),
+                    request.getParameter("Jewelery"),
+                    request.getParameter("Other"),
+                    request.getParameter("Sports"),
+                    request.getParameter("Trade")
+            };
+            System.out.println(array);
+
+            for (String name: array ) {
+                System.out.println(name);
+            }
+            DaoFactory.getAdsDao().setAdCategory(DaoFactory.getAdsDao().insert(ad), array);
+
             response.sendRedirect("/profile");
         }
     }

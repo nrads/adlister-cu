@@ -16,4 +16,8 @@ public interface Ads {
     // Show Owner's Ads
     List<Ad> ownerAds(Long user_id);
 
+
+
+    void setAdCategory(Long adId, String[] array);
+
 }
