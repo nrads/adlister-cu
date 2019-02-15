@@ -61,13 +61,13 @@ public class MySQLUsersDao implements Users {
             }
     }
 
-    public void updateUsername(String newUsername) {
-        try{
-            String sql = "UPDATE user SET username = ? WHERE id = ?";
-            PreparedStatement stmt = connection.prepareStatement(sql);
-
-        } catch (SQLException e){
-            throw new RuntimeException("Error updating username.", e);
-        }
-    }
+//    public void updateUsername(String newUsername) {
+//        try{
+//            String sql = "UPDATE user SET username = ? WHERE id = ?";
+//            PreparedStatement stmt = connection.prepareStatement(sql);
+//
+//        } catch (SQLException e){
+//            throw new RuntimeException("Error updating username.", e);
+//        }
+//    }
 }

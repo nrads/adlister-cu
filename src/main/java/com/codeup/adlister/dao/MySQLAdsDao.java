@@ -113,6 +113,7 @@ public class MySQLAdsDao implements Ads {
         }catch (SQLException e){
             throw new RuntimeException("Error loading your ads.", e);
         }
-
     }
+
+
 }
