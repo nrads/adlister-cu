@@ -72,4 +72,7 @@ public class ListAdsDao implements Ads {
     public void setAdCategory(Long AdId, String[] array) {
 
     }
+  
+    @Override
+    public List<Ad> ownerAds(Long user_id) { return null; }
 }

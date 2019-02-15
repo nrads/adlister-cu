@@ -38,6 +38,7 @@ public class CreateAdServlet extends HttpServlet {
                     request.getParameter("title"),
                     request.getParameter("description")
             );
+          
             String[] array = {
                     request.getParameter("Art"),
                     request.getParameter("Cars"),
@@ -54,9 +55,9 @@ public class CreateAdServlet extends HttpServlet {
 
             for (String name: array ) {
                 System.out.println(name);
-
             }
             DaoFactory.getAdsDao().setAdCategory(DaoFactory.getAdsDao().insert(ad), array);
+
             response.sendRedirect("/profile");
         }
     }

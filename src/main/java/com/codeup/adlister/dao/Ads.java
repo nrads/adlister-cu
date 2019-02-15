@@ -13,6 +13,8 @@ public interface Ads {
     List<Ad> searchAds(String searchQuery);
     // Filter ads by category
     List<Ad> categoryFilter(String searchQuery);
+    // Show Owner's Ads
+    List<Ad> ownerAds(Long user_id);
 
 
 
