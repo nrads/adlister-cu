@@ -37,7 +37,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
-        try {                                        // added the date created when inserting a new ad into the data base
+        try { // added the date created when inserting a new ad into the data base
             String sql = "INSERT INTO ads(title, description, user_id, date_created) VALUES (?, ?, ?, curdate())";
             PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, ad.getTitle());
@@ -45,6 +45,7 @@ public class MySQLAdsDao implements Ads {
             stmt.setLong(3, ad.getUserId());
             stmt.executeUpdate();
             ResultSet generatedIdResultSet = stmt.getGeneratedKeys();
+            generatedIdResultSet.next();
             return generatedIdResultSet.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
@@ -98,4 +99,21 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> categoryFilter(String searchQuery) {
         return null;
     }
+
+    public List<Ad> ownerAds(Long user_id) {
+        String sql = "SELECT * FROM ads WHERE user_id = ?";
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, user_id);
+
+            ResultSet rs = stmt.executeQuery();
+
+            return createAdsFromResults(rs);
+        }catch (SQLException e){
+            throw new RuntimeException("Error loading your ads.", e);
+        }
+    }
+
+
 }
