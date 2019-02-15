@@ -18,11 +18,11 @@ public class AdsIndexServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.removeAttribute("failed");
+        request.removeAttribute("noText");
         if(request.getParameter("searchAds").trim().isEmpty()) {
             try {
 
-                request.setAttribute("failed", true);
+                request.setAttribute("noText", true);
                 request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
             } catch (ServletException e) {
                 e.printStackTrace();

@@ -14,4 +14,8 @@ public interface Ads {
     // Filter ads by category
     List<Ad> categoryFilter(String searchQuery);
 
+
+
+    void setAdCategory(Long adId, String[] array);
+
 }

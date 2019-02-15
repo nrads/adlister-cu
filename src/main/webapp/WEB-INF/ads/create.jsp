@@ -30,25 +30,25 @@
             <div>
                 <label>Categories</label>
                 <label>
-                    <input type="checkbox" name="Art" value="Art">Art
+                    <input type="checkbox" name="Art">Art
                 </label><label>
-                    <input type="checkbox" name="Cars" value="Cars">Cars
+                    <input type="checkbox" name="Cars">Cars
                 </label><label>
-                    <input type="checkbox" name="Computers" value="Computers">Computers
+                    <input type="checkbox" name="Computers">Computers
                 </label><label>
-                    <input type="checkbox" name="Electronics" value="Electronics">Electronics
+                    <input type="checkbox" name="Electronics">Electronics
                 </label><label>
-                    <input type="checkbox" name="Furniture" value="Furniture">Furniture
+                    <input type="checkbox" name="Furniture">Furniture
                 </label><label>
-                    <input type="checkbox" name="IT Services" value="IT Services">IT Services
+                    <input type="checkbox" name="IT Services">IT Services
                 </label><label>
-                    <input type="checkbox" name="Jewelery" value="Jewelery">Jewelery
+                    <input type="checkbox" name="Jewelery">Jewelery
                 </label><label>
-                    <input type="checkbox" name="Other" value="Other">Other
+                    <input type="checkbox" name="Other">Other
                 </label><label>
-                    <input type="checkbox" name="Sports" value="Sports">Sports
+                    <input type="checkbox" name="Sports">Sports
                 </label><label>
-                    <input type="checkbox" name="Trade" value="Trade">Trade
+                    <input type="checkbox" name="Trade">Trade
                 </label>
             </div>
             <input type="submit" class="btn btn-block btn-primary">

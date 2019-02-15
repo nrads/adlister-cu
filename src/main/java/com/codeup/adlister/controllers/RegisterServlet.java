@@ -38,7 +38,8 @@ public class RegisterServlet extends HttpServlet {
             user.setUsername(username);
             user.setEmail(email);
             user.setPassword(Password.hash(password));
-            if (DaoFactory.getUsersDao().insert(user) == -12L){
+            user.setId(DaoFactory.getUsersDao().insert(user));
+            if (user.getId() == -12L){
                 request.setAttribute("username", username);
                 request.setAttribute("email",email);
                 request.setAttribute("failed",true);

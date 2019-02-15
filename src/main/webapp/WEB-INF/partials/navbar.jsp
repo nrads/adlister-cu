@@ -8,7 +8,7 @@
                 <form class="form-inline d-inline " style="margin: .5em 0 0 0" action="/ads" method="post">
                     <input class="form-control mr-sm-2" name="searchAds" type="search" placeholder="Search for an Ad">
                     <button class="btn my-2 my-sm-0" type="submit" onclick="x(e)">Search</button>
-                    <c:choose><c:when test="${failed != null}"><div class="alert alert-warning" role="alert"><p>Search can not be empty</p></div></c:when></c:choose>
+                    <c:choose><c:when test="${noText != null}"><div class="alert alert-warning" role="alert"><p>Search can not be empty</p></div></c:when></c:choose>
                 </form>
             </div>
         </div>

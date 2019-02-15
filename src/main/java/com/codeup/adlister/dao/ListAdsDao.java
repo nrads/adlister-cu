@@ -65,4 +65,11 @@ public class ListAdsDao implements Ads {
     public List<Ad> categoryFilter(String searchQuery) {
         return null;
     }
+
+
+
+    @Override
+    public void setAdCategory(Long AdId, String[] array) {
+
+    }
 }
