@@ -62,7 +62,7 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> categoryFilter(String searchQuery) {
+    public List<String> getCategoriesOfAd(Long adId) {
         return null;
     }
 

@@ -11,13 +11,11 @@ public interface Ads {
     Long insert(Ad ad);
     // search ads by title / description
     List<Ad> searchAds(String searchQuery);
-    // Filter ads by category
-    List<Ad> categoryFilter(String searchQuery);
     // Show Owner's Ads
     List<Ad> ownerAds(Long user_id);
-
-
-
+    // sets categories of an ad given it's id upon ad creation
     void setAdCategory(Long adId, String[] array);
+    // Filter ads by category
+    List<String> getCategoriesOfAd(Long ad_id);
 
 }

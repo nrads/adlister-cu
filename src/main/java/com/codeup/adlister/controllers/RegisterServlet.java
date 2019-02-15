@@ -41,7 +41,7 @@ public class RegisterServlet extends HttpServlet {
             user.setId(DaoFactory.getUsersDao().insert(user));
             if (user.getId() == -12L){
                 request.setAttribute("username", username);
-                request.setAttribute("email",email);
+                request.setAttribute("email", email);
                 request.setAttribute("failed",true);
                 request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
                 return;

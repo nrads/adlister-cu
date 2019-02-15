@@ -67,7 +67,8 @@ public class MySQLAdsDao implements Ads {
             rs.getLong("user_id"),
             rs.getString("title"),
             rs.getString("description"),
-            rs.getString("date_created")
+            rs.getString("date_created"),
+            getCategoriesOfAd(rs.getLong("id"))
         );
     }
 
@@ -97,30 +98,6 @@ public class MySQLAdsDao implements Ads {
         }
 
     }
-    @Override
-    public void setAdCategory(Long adId, String[] array){
-
-        try {
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] != null ){
-                    String sql = "INSERT INTO ad_categories(ad_id, categories_id) VALUES (?, ?)";
-                    PreparedStatement stmt = connection.prepareStatement(sql);
-                    stmt.setLong(1, adId);
-                    stmt.setLong(2, i+1);
-                    stmt.executeUpdate();
-                }
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException("Error setting categories to ad: "+ adId, e);
-        }
-    }
-
-    @Override
-    public List<Ad> categoryFilter(String searchQuery) {
-        return null;
-    }
-
     public List<Ad> ownerAds(Long user_id) {
         String sql = "SELECT * FROM ads WHERE user_id = ?";
         PreparedStatement stmt = null;
@@ -134,6 +111,46 @@ public class MySQLAdsDao implements Ads {
         }catch (SQLException e){
             throw new RuntimeException("Error loading your ads.", e);
         }
+    }
+
+    public void setAdCategory(Long adId, String[] array){
+        try {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != null ){
+                    String sql = "INSERT INTO ad_categories(ad_id, categories_id) VALUES (?, ?)";
+                    PreparedStatement stmt = connection.prepareStatement(sql);
+                    stmt.setLong(1, adId);
+                    stmt.setLong(2, i+1);
+                    stmt.executeUpdate();
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error setting categories to ad: "+ adId, e);
+        }
+    }
+
+    public List<String> getCategoriesOfAd(Long adId) {
+        try{
+            String sql = "Select name from categories " +
+                    "join ad_categories ac on categories.id = ac.categories_id " +
+                    "join ads on ac.ad_id = ads.id " +
+                    "where ad_id = ?";
+
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, adId);
+
+            return createCategoriesFromResults(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching all categories.", e);
+        }
+    }
+
+    private List<String> createCategoriesFromResults(ResultSet rs) throws SQLException {
+        List<String> category = new ArrayList<>();
+        while (rs.next()) {
+            category.add(rs.getString("name"));
+        }
+        return category;
     }
 
 
