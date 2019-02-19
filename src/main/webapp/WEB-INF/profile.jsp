@@ -16,6 +16,12 @@
             <div class="col-md-6">
                 <h2><c:out value="${ad.title}"></c:out></h2>
                 <p><c:out value="${ad.description}"></c:out></p>
+
+                <form action="/profile" method="post">
+                    <input type="hidden" value="${ad.id}" name="adId">
+                    <input class="btn btn-info" type="submit" name="update" value="Edit">
+                    <input class="btn btn-danger" type="submit" name="update" value="Delete">
+                </form>
             </div>
         </c:forEach>
     </div>
