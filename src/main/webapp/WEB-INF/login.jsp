@@ -13,7 +13,7 @@
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" value="${username}" class="form-control" type="text">
+                <input autofocus id="username" name="username" value="${username}" class="form-control" type="text">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>

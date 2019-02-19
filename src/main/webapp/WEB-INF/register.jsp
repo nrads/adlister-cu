@@ -23,7 +23,7 @@
     <form action="/register" method="POST">
         <div class="form-group">
             <label for="username">Email</label>
-            <input id="email" name="email" class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="${email}" required>
+            <input autofocus id="email" name="email" class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="${email}" required>
         </div>
         <div class="form-group">
             <label for="username">Username</label>

@@ -51,11 +51,7 @@ public class CreateAdServlet extends HttpServlet {
                     request.getParameter("Sports"),
                     request.getParameter("Trade")
             };
-            System.out.println(array);
 
-            for (String name: array ) {
-                System.out.println(name);
-            }
             DaoFactory.getAdsDao().setAdCategory(DaoFactory.getAdsDao().insert(ad), array);
 
             response.sendRedirect("/profile");

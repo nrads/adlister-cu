@@ -11,9 +11,28 @@
 
     <div class="container">
         <h1>Edit your ad: </h1>
-        <input id="title" name="title" class="form-control" type="text" value="${title}">
-        <textarea id="description" name="description" class="form-control" type="text" value="${description}"></textarea>
+        <c:choose>
+            <c:when test="${sessionScope.failed != null}">
+                <div class="alert alert-warning" role="alert">
+                    <p>Title field can't be blank</p>
+                </div>
+            </c:when>
+        </c:choose>
+        <form action="/edit" method="post">
+        <%--<input id="adId" name="adId" class="form-control" type="hidden" value="${ad.getId()}">--%>
+            <div class="form-group">
 
+            <label for="title">Title</label>
+
+            <input id="title" name="title" class="form-control" type="text" value="${ad.getTitle()}">
+            </div>
+            <div class="form-group">
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control">${ad.getDescription()}</textarea>
+            <input class="btn btn-info" type="submit" value="Confirm Changes">
+            </div>
+        </form>
     </div>
 
 </body>

@@ -1,11 +1,14 @@
 package com.codeup.adlister.models;
 
+import java.util.List;
+
 public class Ad {
     private long id;
     private long userId;
     private String title;
     private String description;
     private String dateCreated;
+    private List<String> categories;
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
@@ -65,5 +68,13 @@ public class Ad {
 
     public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public List<String> getCategories(){
+        return this.categories;
+    }
+
+    public void setCategories(List<String> list){
+        this.categories = list;
     }
 }

@@ -16,7 +16,11 @@ public interface Ads {
     // Show Owner's Ads
     List<Ad> ownerAds(Long user_id);
 
+    Ad searchAdById(Long adId);
 
+    Long update(Ad ad);
+
+    Long delete(Ad ad);
 
     void setAdCategory(Long adId, String[] array);
 

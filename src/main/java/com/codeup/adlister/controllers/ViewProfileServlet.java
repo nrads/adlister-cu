@@ -23,10 +23,11 @@ public class ViewProfileServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().setAttribute("adId", Long.parseLong(request.getParameter("adId")));
         if (request.getParameter("update").equalsIgnoreCase("edit")){
             response.sendRedirect("/edit");
         } else {
-
+            response.sendRedirect("/delete");
         }
 
     }

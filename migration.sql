@@ -38,3 +38,6 @@ CREATE TABLE ad_categories (
     FOREIGN KEY (ad_id) REFERENCES ads(id),
     FOREIGN KEY (categories_id) REFERENCES categories(id)
 );
+
+select name from ad_categories
+join categories c on ad_categories.categories_id = c.id
