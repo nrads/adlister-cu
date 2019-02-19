@@ -153,5 +153,4 @@ public class MySQLAdsDao implements Ads {
         return category;
     }
 
-
 }

@@ -15,11 +15,18 @@
         <c:forEach var="ad" items="${ownerAds}">
             <div class="col-md-6">
                 <h2><c:out value="${ad.title}"></c:out></h2>
-                <p><c:out value="${ad.description}"></c:out> <br>
-            <c:forEach var="category" items="${ad.getCategories()}">
-                <c:out value="${category}"></c:out>
-            </c:forEach>
+     
+                <p>
+                   <c:out value="${ad.description}"></c:out></p> <br>
+                   <c:forEach var="category" items="${ad.getCategories()}">
+                      <c:out value="${category}"></c:out>
+                   </c:forEach>
                 </p>
+                <form action="/profile" method="post">
+                    <input type="hidden" value="${ad.id}" name="adId">
+                    <input class="btn btn-info" type="submit" name="update" value="Edit">
+                    <input class="btn btn-danger" type="submit" name="update" value="Delete">
+                </form>
             </div>
         </c:forEach>
     </div>
