@@ -25,10 +25,12 @@ public class MySQLUsersDao implements Users {
 
         User user = new User();
         try {
-            String sql = "SELECT * FROM user where username = ?";
+            String sql = "SELECT * FROM user where username = ? or email = ? limit 1";
 
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, username);
+            stmt.setString(2, username);
+
 
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {

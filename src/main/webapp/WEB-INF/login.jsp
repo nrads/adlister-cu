@@ -12,7 +12,7 @@
         <h1>Please Log In</h1><c:choose><c:when test="${failed != null}"><div class="alert alert-warning" role="alert"><p>Invalid credentials</p></div></c:when></c:choose>
         <form action="/login" method="POST">
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">Username or Email</label>
                 <input autofocus id="username" name="username" value="${username}" class="form-control" type="text">
             </div>
             <div class="form-group">

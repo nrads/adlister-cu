@@ -14,10 +14,10 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2><c:out value="${ad.title}"></c:out></h2>
+            <h3><c:out value="${ad.title}"></c:out></h3>
             <p><c:out value="${ad.description}"></c:out></p>
             <p><c:forEach var="category" items="${ad.getCategories()}">
-                <span><c:out value="${category}"></c:out></span>
+                <span class="cat-pill btn-primary"><c:out value="${category}"></c:out></span>
             </c:forEach></p>
         </div>
     </c:forEach>
