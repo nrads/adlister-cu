@@ -52,6 +52,7 @@ body {
 
 h1, h2, h3, h4 {
   font-size: 36px;
+  color: #00cc67;
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
 }
@@ -803,9 +804,13 @@ a.back-to-top:hover, a.back-to-top:focus {
   left: 0px;
   background: rgba(54, 59, 77, 0.88);
 }
+#home-search {
+  width: 300px !important;
+  margin: 0;
+}
 
 #hero-area .contents {
-  padding: 160px 0 210px;
+  padding: 25% 0 35%;
 }
 
 #hero-area .contents .head-title {
@@ -834,6 +839,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 .search-bar .search-form {
   width: 100%;
   float: left;
+  margin: 0;
 }
 
 .search-bar fieldset {
@@ -947,7 +953,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 .search-bar .btn-common {
   top: 0;
   right: 0;
-  padding: 0;
+  padding: 12px;
   z-index: 2;
   width: 100px;
   border-radius: 0;
@@ -1016,7 +1022,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   line-height: 18px;
   list-style: none;
   margin: 0 0 12px;
-  padding: 20px 0 10px;
+  padding: 0 0 10px;
   border-bottom: 1px solid #dbdbdb;
 }
 
@@ -1030,7 +1036,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   margin-bottom: 0;
 }
 
-.featured-box .feature-content h4 a {
+.featured-box .feature-content h4 h3 a {
   color: #00cc67;
 }
 
@@ -3942,4 +3948,8 @@ footer .menu li a:hover {
 
 .error-content .description a:hover {
   color: #00cc67;
+}
+
+#main-navbar{
+  max-width: 80%;
 }

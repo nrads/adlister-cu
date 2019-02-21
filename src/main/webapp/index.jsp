@@ -21,36 +21,7 @@
                                 <form class="search-form">
                                     <div class="form-group tg-inputwithicon">
                                         <i class="lni-tag"></i>
-                                        <input type="text" name="customword" class="form-control" placeholder="What are you looking for">
-                                    </div>
-                                    <div class="form-group tg-inputwithicon">
-                                        <i class="lni-map-marker"></i>
-                                        <div class="tg-select">
-                                            <select>
-                                                <option value="none">All Locations</option>
-                                                <option value="none">New York</option>
-                                                <option value="none">California</option>
-                                                <option value="none">Washington</option>
-                                                <option value="none">Birmingham</option>
-                                                <option value="none">Chicago</option>
-                                                <option value="none">Phoenix</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group tg-inputwithicon">
-                                        <i class="lni-layers"></i>
-                                        <div class="tg-select">
-                                            <select>
-                                                <option value="none">Select Categories</option>
-                                                <option value="none">Mobiles</option>
-                                                <option value="none">Electronics</option>
-                                                <option value="none">Training</option>
-                                                <option value="none">Real Estate</option>
-                                                <option value="none">Services</option>
-                                                <option value="none">Training</option>
-                                                <option value="none">Vehicles</option>
-                                            </select>
-                                        </div>
+                                        <input type="text" name="customword" class="form-control" id="home-search" placeholder="What are you looking for">
                                     </div>
                                     <button class="btn btn-common" type="button"><i class="lni-search"></i></button>
                                 </form>
@@ -61,5 +32,11 @@
             </div>
         </div>
     </div>
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    <script>
+        jQuery(document).ready(function($) {
+            $('div.page-header').removeClass('page-header');
+        });
+    </script>
 </body>
 </html>

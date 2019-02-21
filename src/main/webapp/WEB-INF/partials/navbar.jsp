@@ -41,22 +41,22 @@
                 <span class="lni-menu"></span>
                 <span class="lni-menu"></span>
             </button>
-            <a class="navbar-brand" href="ads" id="logo">Adlister</a>
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
+            <a class="navbar-brand" href="ads" id="logo">Adlister</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">
                         Home
                     </a>
                 </li>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-link" href="category.html">--%>
+                        <%--Categories--%>
+                    <%--</a>--%>
+                <%--</li>--%>
                 <li class="nav-item">
-                    <a class="nav-link" href="category.html">
-                        Categories
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#" >
+                    <a class="nav-link dropdown-toggle" href="ads" >
                         Ad Listings
                     </a>
                 </li>
@@ -69,17 +69,14 @@
                         <c:choose>
                             <c:when test="${sessionScope.user != null}">
                             <a class="dropdown-item" href="profile"><i class="lni-wallet"></i> My Ads</a>
-                            <a href="/ads/create">Create an ad</a>
-                            <a href="/profile">Profile</a>
-                            <a href="/logout">Logout</a>
+                                <a class="dropdown-item" href="ads/create"><i class="lni-pencil-alt"></i> Create an ad</a>
+                                <a class="dropdown-item" href="logout"><i class="lni-close"></i> Logout</a>
                             </c:when>
                             <c:otherwise>
-                                <a href="/register">Create an Account</a>
-                                <a href="/login">Login</a>
+                                <a class="dropdown-item" href="register"><i class="lni-user"></i> Create an Account</a>
+                                <a class="dropdown-item" href="login"><i class="lni-lock"></i> Login</a>
                             </c:otherwise>
                         </c:choose>
-                        <a class="dropdown-item" href="login"><i class="lni-lock"></i> Log In</a>
-                        <a class="dropdown-item" href="register"><i class="lni-user"></i> Sign Up</a>
                         <%--<a class="dropdown-item" href=""><i class="lni-reload"></i> Forgot Password</a>--%>
                     </div>
                 </li>
@@ -93,22 +90,30 @@
     <!-- Mobile Menu Start -->
     <ul class="mobile-menu">
         <li>
-            <a class="active" href="index.html">Home</a>
+            <a class="active" href="/">Home</a>
         </li>
+        <%--<li>--%>
+            <%--<a href="category.html">Categories</a>--%>
+        <%--</li>--%>
         <li>
-            <a href="category.html">Categories</a>
-        </li>
-        <li>
-            <a href="#">
+            <a href="ads">
                 Listings
             </a>
         </li>
         <li>
             <a>My Account</a>
             <ul class="dropdown">
-                <li><a href="profile"><i class="lni-wallet"></i> My Ads</a></li>
-                <li><a href="login"><i class="lni-lock"></i> Log In</a></li>
-                <li><a href="register"><i class="lni-user"></i> Sign Up</a></li>
+                <c:choose>
+                    <c:when test="${sessionScope.user != null}">
+                        <a class="dropdown-item" href="profile"><i class="lni-wallet"></i> My Ads</a>
+                        <a class="dropdown-item" href="ads/create"><i class="lni-pencil-alt"></i> Create an ad</a>
+                        <a class="dropdown-item" href="logout"><i class="lni-close"></i> Logout</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="dropdown-item" href="register"><i class="lni-user"></i> Create an Account</a>
+                        <a class="dropdown-item" href="login"><i class="lni-lock"></i> Login</a>
+                    </c:otherwise>
+                </c:choose>
                 <%--<li><a href=""><i class="lni-reload"></i> Forgot Password</a></li>--%>
             </ul>
         </li>
