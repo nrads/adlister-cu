@@ -8,12 +8,12 @@ span.cat-pill{
     border-radius: .25em;
 }
 
-.ad_description{
-    margin: 0;
-    width: 70%;
+a#logo{
+    padding :.75em !important;
+    color: #00cc67 !important;
 }
 
-.editDeleteButtons {
-    margin: 0;
-    width: 20%;
+a#logo:hover {
+    color: #00cc67 !important;
+    text-decoration: underline !important;
 }
