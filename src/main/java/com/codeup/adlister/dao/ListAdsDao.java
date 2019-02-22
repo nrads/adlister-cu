@@ -5,7 +5,7 @@ import com.codeup.adlister.models.Ad;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdsDao implements Ads {
+public class ListAdsDao {
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -56,38 +56,38 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
-    @Override
+
     public List<Ad> searchAds(String searchQuery) {
         return null;
     }
 
-    @Override
+
     public List<Ad> categoryFilter(String searchQuery) {
         return null;
     }
 
 
 
-    @Override
     public void setAdCategory(Long AdId, String[] array) {
 
     }
 
-    @Override
+
     public Ad searchAdById(Long adId) {
         return null;
     }
 
-    @Override
+
     public Long update(Ad ad) {
         return null;
     }
 
-    @Override
+
     public Long delete(Ad ad) {
         return null;
     }
 
-    @Override
+
     public List<Ad> ownerAds(Long user_id) { return null; }
+
 }

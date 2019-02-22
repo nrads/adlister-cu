@@ -21,7 +21,6 @@ public class AdsIndexServlet extends HttpServlet {
         request.removeAttribute("noText");
         if(request.getParameter("searchAds").trim().isEmpty()) {
 
-
                 request.setAttribute("noText", true);
                 response.sendRedirect("/ads");
 

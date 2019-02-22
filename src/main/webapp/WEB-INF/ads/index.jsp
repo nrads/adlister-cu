@@ -26,27 +26,29 @@
                         <div class="widget categories">
                             <h4 class="widget-title">All Categories</h4>
                             <ul class="categories-list">
-                                <li>
-                                        Hotel & Travels
-                                </li>
-                                <li>
-                                        Services
-                                </li>
-                                <li>
-                                        Pets
-                                </li>
-                                <li>
-                                        Restaurants
-                                </li>
-                                <li>
-                                        Real Estate
-                                </li>
-                                <li>
-                                        Jobs
-                                </li>
-                                <li>
-                                        Electronics
-                                </li>
+                                <form id="categoryList" action="/categories" method="post">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="art">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="cars">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="computers"></li>
+                                    <li>
+                                        <input type="submit" name="categoryName" value="trade">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="furniture">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="IT">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="jewelery">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="other">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="sports">
+                                    <li>
+                                        <input type="submit" name="categoryName" value="electronics">
+                                    </li>
+                                </form>
                             </ul>
                         </div>
                     </aside>

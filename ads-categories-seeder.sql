@@ -22,3 +22,4 @@ insert into categories (name) value
   ('Other'),
   ('Sports'),
   ('Trade');
+

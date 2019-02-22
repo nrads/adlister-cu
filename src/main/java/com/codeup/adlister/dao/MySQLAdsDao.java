@@ -162,6 +162,20 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error searching all ads.", e);
         }
     }
+
+    public List<Ad> categorySearch(String categoryName){
+        String sql = "SELECT ads.id, ads.user_id, ads.title, ads.description, categories.name, ads.date_created FROM ads JOIN ad_categories ON ad_categories.ad_id = ads.id JOIN categories ON ad_categories.categories_id = categories.id WHERE categories.name = ?";
+        PreparedStatement stmt = null;
+        try{
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, categoryName);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        }catch (SQLException e) {
+            throw new RuntimeException("Error loading ads.", e);
+        }
+    }
+
     @Override
     public void setAdCategory(Long adId, String[] array){
         try {

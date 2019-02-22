@@ -18,7 +18,7 @@
                         <p>Buy And Sell Everything From Used Cars To Mobile Phones And Computers, <br> Or Search For Property, Jobs And More</p>
                         <div class="search-bar">
                             <fieldset>
-                                <form class="search-form">
+                                <form action="/ads" method="post" class="search-form">
                                     <div class="form-group tg-inputwithicon">
                                         <i class="lni-tag"></i>
                                         <input type="text" name="searchAds" class="form-control" id="home-search" placeholder="What are you looking for">

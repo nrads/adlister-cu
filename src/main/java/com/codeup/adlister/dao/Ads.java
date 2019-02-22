@@ -20,6 +20,8 @@ public interface Ads {
 
     Long update(Ad ad);
 
+    List<Ad> categorySearch(String categoryName);
+
     Long delete(Ad ad);
 
     void setAdCategory(Long adId, String[] array);
