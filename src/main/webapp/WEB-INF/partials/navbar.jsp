@@ -12,8 +12,6 @@
                 </form>
             </div>
         </div>
-
-
         <ul class="nav navbar-nav navbar-right">
             <c:choose>
                 <c:when test="${sessionScope.user != null}">
@@ -29,9 +27,4 @@
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-    <script>
-        function x(e) {
-            e.preventDefault();
-        }
-    </script>
 </nav>

@@ -1,0 +1,19 @@
+.cat-pill{
+    padding: .5em;
+    border-radius: .25em;
+}
+
+span.cat-pill{
+    padding: .25em;
+    border-radius: .25em;
+}
+
+.ad_description{
+    margin: 0;
+    width: 70%;
+}
+
+.editDeleteButtons {
+    margin: 0;
+    width: 20%;
+}

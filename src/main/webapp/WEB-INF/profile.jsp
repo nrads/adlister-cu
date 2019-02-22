@@ -12,22 +12,23 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.getUsername()}!</h1>
 
+
         <c:forEach var="ad" items="${ownerAds}">
-            <div class="col-md-6">
-                <h2><c:out value="${ad.title}"></c:out></h2>
-                <p><c:out value="${ad.description}"></c:out></p>
-            <p><c:forEach var="category" items="${ad.getCategories()}">
-                <span><c:out value="${category}"></c:out></span>
-                </c:forEach></p>
-
-
-
-
-                <form action="/profile" method="post">
-                    <input type="hidden" value="${ad.id}" name="adId">
-                    <input class="btn btn-info" type="submit" name="update" value="Edit">
-                    <input class="btn btn-danger" type="submit" name="update" value="Delete">
-                </form>
+            <div class="row">
+                <div class="col ad_description">
+                    <h3><c:out value="${ad.title}"></c:out></h3>
+                    <p><c:out value="${ad.description}"></c:out></p>
+                <p><c:forEach var="category" items="${ad.getCategories()}">
+                    <span class><c:out value="${category}"></c:out></span>
+                    </c:forEach></p>
+                </div>
+                <div class="col editDeleteButtons">
+                    <form action="/profile" method="post">
+                        <input type="hidden" value="${ad.id}" name="adId">
+                        <input class="btn btn-info" type="submit" name="update" value="Edit">
+                        <input class="btn btn-danger" type="submit" name="update" value="Delete">
+                    </form>
+                </div>
             </div>
         </c:forEach>
     </div>
