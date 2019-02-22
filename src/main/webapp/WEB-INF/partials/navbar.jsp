@@ -43,7 +43,7 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
-            <a class="navbar-brand" href="ads" id="logo">Adlister</a>
+            <a class="navbar-brand" href="/ads" id="logo">Adlister</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">

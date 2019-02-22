@@ -20,9 +20,9 @@
                     <p>Passwords do not match</p>
                 </div></c:when></c:choose>
 
-    <form action="/register" method="POST">
+    <form action="register" method="POST">
         <div class="form-group">
-            <label for="username">Email</label>
+            <label for="email">Email</label>
             <input autofocus id="email" name="email" class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="${email}" required>
         </div>
         <div class="form-group">
@@ -34,10 +34,10 @@
             <input id="password" name="password" class="form-control" type="password" pattern="[a-zA-Z0-9]{6,32}" required>
         </div>
         <div class="form-group">
-            <label for="password">Confirm Password</label>
+            <label for="passwordConfirm">Confirm Password</label>
             <input id="passwordConfirm" name="passwordConfirm" class="form-control" type="password" pattern="[a-zA-Z0-9]{6,32}" required>
         </div>
-        <input type="submit" class="btn btn-primary btn-block" value="Sign Up!">
+        <input type="submit" class="btn btn-common btn-block" value="Sign Up!">
     </form>
 </div>
 <jsp:include page="/WEB-INF/partials/footer.jsp" />

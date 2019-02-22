@@ -404,6 +404,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 .page-header {
   padding: 200px 0px 45px;
+  margin-bottom: 2em;
   position: relative;
   background: url('../../assets/img/banner1.jpg');
 }
@@ -805,7 +806,6 @@ a.back-to-top:hover, a.back-to-top:focus {
   background: rgba(54, 59, 77, 0.88);
 }
 #home-search {
-  width: 300px !important;
   margin: 0;
 }
 
@@ -838,7 +838,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 .search-bar .search-form {
   width: 100%;
-  float: left;
+  /*float: left;*/
   margin: 0;
 }
 
@@ -865,7 +865,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 .search-bar .form-group {
   margin: 0;
   float: left;
-  width: 30.33%;
+  width: 91%;
   padding: 0 0 0 60px;
   border-left: 1px solid #dbdbdb;
 }
@@ -985,12 +985,12 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 /* Feateured Product */
 .featured-box {
+  position: relative;
   width: 100%;
   padding: 15px;
   background: #fff;
   box-shadow: 0px 2px 18px 0px rgba(198, 198, 198, 0.3);
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin:0 15px 15px 15px;
 }
 
 .featured-box figure {
@@ -1047,7 +1047,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 .featured-box .feature-content ul.address li {
   float: left;
-  width: 50%;
+  max-width: 90%;
   line-height: 30px;
   color: #999;
 }
@@ -3952,4 +3952,32 @@ footer .menu li a:hover {
 
 #main-navbar{
   max-width: 80%;
+}
+
+.cat-pill{
+  padding: .5em;
+  border-radius: .25em;
+}
+
+span.cat-pill{
+  padding: .25em;
+  margin: .25em;
+  border-radius: .25em;
+}
+
+a#logo{
+  padding :.75em !important;
+  color: #00cc67 !important;
+}
+
+a#logo:hover {
+  color: #00cc67 !important;
+  text-decoration: underline !important;
+}
+
+.btn-list{
+  position: absolute;
+  margin-right: 14px;
+  right: 0;
+  bottom: 0;
 }

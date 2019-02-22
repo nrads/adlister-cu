@@ -9,7 +9,9 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <div class="main-container section-padding">
+
+    <div class="main-container">
+        <h1>  Our Ads</h1>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-12 col-xs-12 page-sidebar">
@@ -63,7 +65,7 @@
                                                 <ul class="address">
                                                     <c:forEach var="category" items="${ad.getCategories()}">
                                                     <li>
-                                                        <span class="cat-pill btn-primary"><i class="lni-tag"></i><c:out value="${category}"></c:out></span>
+                                                        <span class="cat-pill btn-common"><i class="lni-tag"></i><c:out value="${category}"></c:out></span>
                                                     </li>
                                                     </c:forEach>
                                                 </ul>

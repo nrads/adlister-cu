@@ -21,9 +21,9 @@
                                 <form class="search-form">
                                     <div class="form-group tg-inputwithicon">
                                         <i class="lni-tag"></i>
-                                        <input type="text" name="customword" class="form-control" id="home-search" placeholder="What are you looking for">
+                                        <input type="text" name="searchAds" class="form-control" id="home-search" placeholder="What are you looking for">
                                     </div>
-                                    <button class="btn btn-common" type="button"><i class="lni-search"></i></button>
+                                    <button class="btn btn-common" type="submit"><i class="lni-search"></i></button>
                                 </form>
                             </fieldset>
                         </div>

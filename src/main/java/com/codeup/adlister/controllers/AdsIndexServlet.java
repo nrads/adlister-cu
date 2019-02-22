@@ -20,13 +20,11 @@ public class AdsIndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.removeAttribute("noText");
         if(request.getParameter("searchAds").trim().isEmpty()) {
-            try {
+
 
                 request.setAttribute("noText", true);
-                request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            }
+                response.sendRedirect("/ads");
+
         } else {
             request.setAttribute("ads", DaoFactory.getAdsDao().searchAds(request.getParameter("searchAds")));
             request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);

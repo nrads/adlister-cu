@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet (name = "contollers.DeleteAdServlet", urlPatterns = "/delete")
+@WebServlet(name = "controllers.DeleteAdServlet", urlPatterns = "/delete")
 public class DeleteAdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
-        <h1>Create a new Ad</h1>
+        <h1>Post An Ad</h1>
         <c:choose>
             <c:when test="${failed != null}">
                 <div class="alert alert-warning" role="alert">
@@ -53,9 +53,11 @@
                     </label>
                 </div>
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn btn-block btn-common">
 
         </form>
     </div>
+<jsp:include page="/WEB-INF/partials/footer.jsp" />
+
 </body>
 </html>
